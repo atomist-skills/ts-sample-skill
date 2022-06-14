@@ -1,11 +1,12 @@
 # `atomist/ts-sample-skill`
 
-Simple skill showing how to subscribe to and transact new data written in TypeScript.
+Simple skill showing how to subscribe to and transact new data written in
+TypeScript.
 
 ## Files
 
 | File                                                                       | Description                                    |
-|----------------------------------------------------------------------------|------------------------------------------------|
+| -------------------------------------------------------------------------- | ---------------------------------------------- |
 | [datalog/schema/commit_signature.edn](datalog/schema/commit_signature.edn) | Datalog schema defining Commit signature facts |
 | [datalog/subscription/on_push.edn](datalog/subscription/on_push.edn)       | Subscription for new pushes                    |
 | [lib/events.ts](lib/events.ts)                                             | TypeScript file defining the event handlers    |
