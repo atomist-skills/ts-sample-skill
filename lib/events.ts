@@ -53,8 +53,8 @@ export const on_push: EventHandler<subscription.datalog.OnPush, Configuration> =
 				commit: "$commit",
 				signature: gitCommit.commit.verification.signature,
 				status: gitCommit.commit.verification.verified
-					? ":git.commit.signature/VERIFIED"
-					: ":git.commit.signature/NOT_VERIFIED",
+					? datalog.asKeyword("git.commit.signature/VERIFIED")
+					: datalog.asKeyword("git.commit.signature/NOT_VERIFIED"),
 				reason: gitCommit.commit.verification.reason,
 			}),
 		]);
