@@ -65,3 +65,22 @@ export const on_push: EventHandler<subscription.datalog.OnPush, Configuration> =
 			"Successfully transacted commit signature for 1 commit",
 		);
 	});
+
+interface CommitSignature {
+	signature: string;
+	reason: string;
+	status: string;
+}
+
+export const on_commit_signature: EventHandler<
+	subscription.datalog.OnPush & { signature: CommitSignature },
+	Configuration
+> = handle.transform(async ctx => {
+	log.info(
+		"Commit %s is signed and verified by: %s",
+		ctx.data.commit.sha,
+		ctx.data.signature.signature,
+	);
+
+	return status.success("Detected signed and verified commit");
+});
