@@ -18,7 +18,6 @@ import {
 	datalog,
 	EventHandler,
 	github,
-	handle,
 	log,
 	repository,
 	status,
@@ -27,60 +26,80 @@ import {
 
 import { Configuration } from "./configuration";
 
-export const on_push: EventHandler<subscription.datalog.OnPush, Configuration> =
-	handle.transform(async ctx => {
-		const commit = ctx.data.commit;
+export const on_push: EventHandler<
+	[subscription.datalog.OnPush],
+	Configuration
+> = async ctx => {
+	const commit = ctx.event.context.subscription.result[0][0];
+	const repo = commit["git.commit/repo"];
+	const org = repo["git.repo/org"];
 
-		const gitCommit = (
-			await github.api(repository.fromRepo(commit.repo)).repos.getCommit({
-				owner: commit.repo.org.name,
-				repo: commit.repo.name,
-				ref: commit.sha,
+	const gitCommit = (
+		await github
+			.api(
+				repository.gitHub({
+					owner: org["git.org/name"],
+					repo: repo["git.repo/name"],
+					credential: org["git.org/installation-token"]
+						? {
+								token: org["git.org/installation-token"],
+								scopes: [],
+						  }
+						: undefined,
+				}),
+			)
+			.repos.getCommit({
+				owner: org["git.org/name"],
+				repo: repo["git.repo/name"],
+				ref: commit["git.commit/sha"],
 			})
-		).data;
+	).data;
 
-		await ctx.datalog.transact([
-			datalog.entity("git/repo", "$repo", {
-				"sourceId": commit.repo.sourceId,
-				"git.provider/url": commit.repo.org.url,
-			}),
-			datalog.entity("git/commit", "$commit", {
-				"sha": commit.sha,
-				"repo": "$repo",
-				"git.provider/url": commit.repo.org.url,
-			}),
-			datalog.entity("git.commit/signature", {
-				commit: "$commit",
-				signature: gitCommit.commit.verification.signature,
-				status: gitCommit.commit.verification.verified
-					? datalog.asKeyword("git.commit.signature/VERIFIED")
-					: datalog.asKeyword("git.commit.signature/NOT_VERIFIED"),
-				reason: gitCommit.commit.verification.reason,
-			}),
-		]);
+	await ctx.datalog.transact([
+		datalog.entity("git/repo", "$repo", {
+			"sourceId": repo["git.repo/source-id"],
+			"git.provider/url": org["git.provider/url"],
+		}),
+		datalog.entity("git/commit", "$commit", {
+			"sha": commit["git.commit/sha"],
+			"repo": "$repo",
+			"git.provider/url": org["git.provider/url"],
+		}),
+		datalog.entity("git.commit/signature", {
+			commit: "$commit",
+			signature: gitCommit.commit.verification.signature,
+			status: gitCommit.commit.verification.verified
+				? datalog.asKeyword("git.commit.signature/VERIFIED")
+				: datalog.asKeyword("git.commit.signature/NOT_VERIFIED"),
+			reason: gitCommit.commit.verification.reason,
+		}),
+	]);
 
-		log.info("Transacted commit signature for %s", commit.sha);
+	log.info("Transacted commit signature for %s", commit["git.commit/sha"]);
 
-		return status.success(
-			"Successfully transacted commit signature for 1 commit",
-		);
-	});
+	return status.completed(
+		"Successfully transacted commit signature for 1 commit",
+	);
+};
 
 interface CommitSignature {
-	signature: string;
-	reason: string;
-	status: string;
+	"git.commit.signature/signature": string;
+	"git.commit.signature/reason": string;
+	"git.commit.signature/status": string;
 }
 
 export const on_commit_signature: EventHandler<
-	subscription.datalog.OnPush & { signature: CommitSignature },
+	[subscription.datalog.OnPush, CommitSignature],
 	Configuration
-> = handle.transform(async ctx => {
+> = async ctx => {
+	const result = ctx.event.context.subscription.result[0];
+	const commit = result[0];
+	const signature = result[1];
 	log.info(
 		"Commit %s is signed and verified by: %s",
-		ctx.data.commit.sha,
-		ctx.data.signature.signature,
+		commit["git.commit/sha"],
+		signature["git.commit.signature/signature"],
 	);
 
-	return status.success("Detected signed and verified commit");
-});
+	return status.completed("Detected signed and verified commit");
+};
