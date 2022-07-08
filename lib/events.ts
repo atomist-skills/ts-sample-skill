@@ -40,9 +40,9 @@ export const on_push: EventHandler<
 				repository.gitHub({
 					owner: org["git.org/name"],
 					repo: repo["git.repo/name"],
-					credential: org["git.org/installation-token"]
+					credential: org["github.org/installation-token"]
 						? {
-								token: org["git.org/installation-token"],
+								token: org["github.org/installation-token"],
 								scopes: [],
 						  }
 						: undefined,
