@@ -20,88 +20,52 @@ import * as assert from "assert";
 
 describe("on_push", () => {
 	it("should successfully handle on_push event", async () => {
-		const payload: any = {
-			correlation_id:
-				"80b3dc5b-cbd5-446b-8615-1dc78831b1c0.mKRZdUKhAXShLsUKGazOg",
-			skill: {
-				id: "9b3adbf7-0ac2-4f72-86b4-9707baf5db56",
-				namespace: "atomist",
-				name: "ts-sample-skill",
-				version: "0.1.0-12",
-				configuration: {
-					name: "javascript_sample_skill",
-					enabled: true,
-				},
-				artifacts: [
-					{
-						args: null,
-						image: "gcr.io/atomist-container-skills/ts-sample-skill:e310b8bca63fe2609f22bab12ec4ac38ac35e27f",
-						__typename: "AtomistSkillDockerArtifact",
-						name: "docker",
-						resources: {
-							request: null,
-							limit: { memory: 1024, cpu: 1 },
-						},
-						env: null,
-						command: null,
-					},
-				],
-				platform: "docker",
-			},
-			subscription: {
-				"name": "on_push",
-				"tx": 13194143809603,
-				"after-basis-t": 4276291,
-				"result": [
-					[
-						{
-							"schema/entity-type": "git/commit",
-							"git.commit/repo": {
-								"git.repo/name": "go-sample-skill",
-								"git.repo/source-id": "490643782",
-								"git.repo/default-branch": "main",
-								"git.repo/org": {
-									"github.org/installation-token":
-										process.env.GITHUB_TOKEN,
-									"git.org/name": "atomist-skills",
-									"git.provider/url": "h****************m",
-								},
-							},
-							"git.commit/author": {
-								"git.user/name": "C**************s",
-								"git.user/login": "c*****s",
-								"git.user/emails": [
-									{ "email.email/address": "c************m" },
-								],
-							},
-							"git.commit/sha":
-								"3753d920965bc39fa97115a90788c3f326b21571",
-							"git.commit/message": "Fix name",
-							"git.ref/refs": [
-								{
-									"git.ref/name": "main",
-									"git.ref/type": {
-										"db/id": 83562883711320,
-										"db/ident": "git.ref.type/branch",
-									},
-								},
-							],
-						},
-					],
-				],
-			},
-			type: "datalog_subscription_result",
-			team_id: "T29E48P34",
-			registration: { name: "atomist/js-sample-skill" },
-			log_url:
-				"h*********************************************************************************************g",
-			secrets: [
-				{
-					uri: "atomist://api-key",
-					value: "e********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************E",
-				},
-			],
-		};
+		const payload: any = `{:execution-id
+   "698e4c21-bf56-482b-be70-54273910fc37.YgDUPm3oIpDTT0SbYH5t5"
+ :skill
+   {:namespace "atomist"
+    :name "go-sample-skill"
+    :version "0.1.0-42"}
+ :workspace-id "T29E48P34"
+ :type :subscription
+ :context
+   {:subscription
+      {:name "on_push"
+       :configuration {:name "go_sample_skill"}
+       :result
+         ([{:schema/entity-type :git/commit
+            :git.commit/repo
+              {:git.repo/name "go-sample-skill"
+               :git.repo/source-id "490643782"
+               :git.repo/default-branch "main"
+               :git.repo/org
+                 {:git.org/name "atomist-skills"
+                  :git.provider/url "https://github.com"}}
+            :git.commit/author
+              {:git.user/name "Christian Dupuis"
+               :git.user/login "cdupuis"
+               :git.user/emails
+                 [{:email.email/address "cd@atomist.com"}]}
+            :git.commit/sha
+              "68c3d821eddc46c4dc4b1de0ffb1a6c29a5342a9"
+            :git.commit/message "Update README.md"
+            :git.ref/refs
+              [{:git.ref/name "main"
+                :git.ref/type
+                  {:db/id 83562883711320
+                   :db/ident :git.ref.type/branch}}]}])
+       :after-basis-t 4284274
+       :tx 13194143817586}}
+ :urls
+   {:execution
+      "https://api.atomist.com/executions/698e4c21-bf56-482b-be70-54273910fc37.YgDUPm3oIpDTT0SbYH5t5"
+    :logs
+      "https://api.atomist.com/executions/698e4c21-bf56-482b-be70-54273910fc37.YgDUPm3oIpDTT0SbYH5t5/logs"
+    :transactions
+      "https://api.atomist.com/executions/698e4c21-bf56-482b-be70-54273910fc37.YgDUPm3oIpDTT0SbYH5t5/transactions"
+    :query
+      "https://api.atomist.com/datalog/team/T29E48P34/queries"}
+ :token "[JSON_WEB_TOKEN]"}`;
 
 		const result = await assertSkill(payload);
 		assert.deepStrictEqual(result.state, State.Completed);
