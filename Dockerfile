@@ -13,6 +13,7 @@ RUN npm ci --no-optional --include=dev \
 FROM atomist/skill:alpine_3.15-node_16@sha256:fbb280e625a68ab37088c43072235a68049c9a4fc358eb0bf164faad3a362b1a
 
 LABEL com.docker.skill.api.version="container/v2"
+COPY --from=build /usr/src/.atomist/skill.yaml /
 
 WORKDIR "/skill"
 
@@ -25,7 +26,6 @@ RUN apk add --no-cache \
  && apk del npm
     
 COPY --from=build /usr/src/ .
-COPY --from=build /usr/src/.atomist/skill.yaml /
 
 ENTRYPOINT ["node", "--no-deprecation", "--no-warnings", "--expose_gc", "--optimize_for_size", "--always_compact", "--max_old_space_size=512", "/skill/node_modules/.bin/atm-skill"]
 CMD ["run"]
