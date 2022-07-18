@@ -20,7 +20,7 @@ WORKDIR "/skill"
 COPY package.json package-lock.json ./
 
 RUN apk add --no-cache \
- npm=8.1.3-r0 \
+ npm=8.10.0-r0 \
  && npm ci --no-optional \
  && npm cache clean --force \
  && apk del npm
