@@ -22,24 +22,4 @@ export const Skill = skill<Configuration>({
 	displayName: "TypeScript Sample Skill",
 	description: "Very basic skill written in TypeScript",
 	categories: [Category.DevSecOps],
-
-	containers: {
-		docker: {
-			image: "gcr.io/atomist-container-skills/ts-sample-skill",
-			resources: {
-				limit: {
-					cpu: 1,
-					memory: 1024,
-				},
-			},
-		},
-	},
-
-	parameters: {},
-
-	datalogSubscriptions: [
-		{
-			name: "on_push",
-		},
-	],
 });

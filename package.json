@@ -40,7 +40,7 @@
     "skill:bundle": "atm-skill bundle",
     "skill:clean": "atm-skill clean",
     "skill:download": "atm-skill download",
-    "skill:generate": "atm-skill generate",
+    "skill:generate": "atm-skill generate --no-artifacts",
     "skill:package": "atm-skill package",
     "skill:register": "atm-skill register",
     "skill:upload": "atm-skill upload --workspace T29E48P34",
@@ -49,7 +49,7 @@
     "test:one": "mocha --require espower-typescript/guess \"test/**/${TEST:-*.test.ts}\""
   },
   "dependencies": {
-    "@atomist/skill": "^1.0.0-branch-v2.11"
+    "@atomist/skill": "^1.0.0-branch-v2.13"
   },
   "devDependencies": {
     "@atomist/npm-tools": "^0.1.1-main.0",
