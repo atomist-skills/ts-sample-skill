@@ -10,7 +10,7 @@ RUN npm ci --no-optional --include=dev \
  && rm -rf node_modules .git
 
 # Set up runtime container
-FROM atomist/skill:alpine_3.16-node_16@sha256:d1a95d8f2652efe90eddf05b7786fdd7d8374582e61fe249fca8bf4b1810030e
+FROM atomist/skill:alpine_3.16-node_16@sha256:45b4a0b5c48576a7269f8b2861ebc05cec1881cfb48abbb21aa8215ccf6bd3c6
 
 LABEL com.docker.skill.api.version="container/v2"
 COPY --from=build /usr/src/.atomist/skill.yaml /
