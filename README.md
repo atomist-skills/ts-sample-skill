@@ -5,13 +5,14 @@ TypeScript.
 
 ## Files
 
-| File                                                                       | Description                                    |
-| -------------------------------------------------------------------------- | ---------------------------------------------- |
-| [datalog/schema/commit_signature.edn](datalog/schema/commit_signature.edn) | Datalog schema defining Commit signature facts |
-| [datalog/subscription/on_push.edn](datalog/subscription/on_push.edn)       | Subscription for new pushes                    |
-| [lib/events.ts](lib/events.ts)                                             | TypeScript file defining the event handlers    |
-| [skill.ts](skill.ts)                                                       | Skill descriptor (metadata and parameters etc) |
-| [skill.package.yaml](skill.package.yaml)                                   | Skill packaging instructions                   |
+| File                                                                                         | Description                                                  |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [datalog/schema/commit_signature.edn](datalog/schema/commit_signature.edn)                   | Datalog schema defining Commit signature facts               |
+| [datalog/subscription/on_commit_signature.edn](datalog/subscription/on_commit_signature.edn) | Subscription for new commit signatures added to the database |
+| [datalog/subscription/on_push.edn](datalog/subscription/on_push.edn)                         | Subscription for new pushes                                  |
+| [lib/events.ts](lib/events.ts)                                                               | TypeScript file defining the event handlers                  |
+| [skill.ts](skill.ts)                                                                         | Skill descriptor (metadata and parameters etc)               |
+| [skill.package.yaml](skill.package.yaml)                                                     | Skill packaging instructions                                 |
 
 ## Contributing
 
@@ -78,5 +79,3 @@ Created by [Atomist][atomist]. Need Help? [Join our Slack workspace][slack].
 
 [atomist]: https://atomist.com/ "Atomist"
 [slack]: https://join.atomist.com/ "Atomist Community Slack"
-
- 
