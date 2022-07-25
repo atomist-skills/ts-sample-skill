@@ -1,4 +1,4 @@
-# `atomist/ts-sample-skill`
+# TypeScript Sample Skill
 
 Simple skill showing how to subscribe to and transact new data written in
 TypeScript.

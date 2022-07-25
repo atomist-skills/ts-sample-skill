@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { Category, skill } from "@atomist/skill";
+import { skill } from "@atomist/skill";
 
 import { Configuration } from "./lib/configuration";
 
 export const Skill = skill<Configuration>({
 	displayName: "TypeScript Sample Skill",
 	description: "Very basic skill written in TypeScript",
-	categories: [Category.DevSecOps],
 });
