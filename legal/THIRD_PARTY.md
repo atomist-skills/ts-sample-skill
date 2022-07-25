@@ -11,9 +11,9 @@ This page details all runtime dependencies of `@atomist/ts-sample-skill`.
 | License                              | Count |
 | ------------------------------------ | ----- |
 | [0BSD](#0bsd)                        | 2     |
-| [Apache-2.0](#apache-20)             | 76    |
+| [Apache-2.0](#apache-20)             | 78    |
 | [BSD-2-Clause](#bsd-2-clause)        | 4     |
-| [BSD-3-Clause](#bsd-3-clause)        | 16    |
+| [BSD-3-Clause](#bsd-3-clause)        | 17    |
 | [CC-BY-3.0](#cc-by-30)               | 1     |
 | [CC0-1.0](#cc0-10)                   | 3     |
 | [GPL-2.0](#gpl-20)                   | 1     |
@@ -101,8 +101,9 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | `@aws-sdk/util-waiter`                      | `3.127.0`            | AWS SDK for JavaScript Team | [https://github.com/aws/aws-sdk-js-v3](https://github.com/aws/aws-sdk-js-v3)                                                           |
 | `@google-cloud/functions-framework`         | `1.10.0`             | Google Inc.                 | [https://github.com/GoogleCloudPlatform/functions-framework-nodejs](https://github.com/GoogleCloudPlatform/functions-framework-nodejs) |
 | `@google-cloud/secret-manager`              | `3.12.0`             | Google LLC                  | [https://github.com/googleapis/nodejs-secret-manager](https://github.com/googleapis/nodejs-secret-manager)                             |
-| `@grpc/grpc-js`                             | `1.6.7`              | Google Inc.                 | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js)       |
+| `@grpc/grpc-js`                             | `1.6.8`              | Google Inc.                 | [https://github.com/grpc/grpc-node/tree/master/packages/grpc-js](https://github.com/grpc/grpc-node/tree/master/packages/grpc-js)       |
 | `@grpc/proto-loader`                        | `0.6.13`             | Google Inc.                 | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                                 |
+| `@grpc/proto-loader`                        | `0.7.0`              | Google Inc.                 | [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)                                                                 |
 | `before-after-hook`                         | `2.2.2`              | Gregor Martynus             | [https://github.com/gr2m/before-after-hook](https://github.com/gr2m/before-after-hook)                                                 |
 | `ecdsa-sig-formatter`                       | `1.0.11`             | D2L Corporation             | [https://github.com/Brightspace/node-ecdsa-sig-formatter](https://github.com/Brightspace/node-ecdsa-sig-formatter)                     |
 | `fast-text-encoding`                        | `1.0.4`              | Sam Thorogood               | [https://github.com/samthor/fast-text-encoding](https://github.com/samthor/fast-text-encoding)                                         |
@@ -111,6 +112,7 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 | `google-auth-library`                       | `7.14.1`             | Google Inc.                 | [https://github.com/googleapis/google-auth-library-nodejs](https://github.com/googleapis/google-auth-library-nodejs)                   |
 | `google-gax`                                | `2.30.5`             | Google API Authors          | [https://github.com/googleapis/gax-nodejs](https://github.com/googleapis/gax-nodejs)                                                   |
 | `long`                                      | `4.0.0`              | Daniel Wirtz                | [https://github.com/dcodeIO/long.js](https://github.com/dcodeIO/long.js)                                                               |
+| `long`                                      | `5.2.0`              | Daniel Wirtz                | [https://github.com/dcodeIO/long.js](https://github.com/dcodeIO/long.js)                                                               |
 | `proto3-json-serializer`                    | `0.1.9`              |                             | [https://github.com/googleapis/proto3-json-serializer-nodejs](https://github.com/googleapis/proto3-json-serializer-nodejs)             |
 | `spdx-correct`                              | `3.1.1`              | Kyle E. Mitchell            | [https://github.com/jslicense/spdx-correct.js](https://github.com/jslicense/spdx-correct.js)                                           |
 | `validate-npm-package-license`              | `3.0.4`              | Kyle E. Mitchell            | [https://github.com/kemitchell/validate-npm-package-license.js](https://github.com/kemitchell/validate-npm-package-license.js)         |
@@ -123,7 +125,7 @@ BSD 2-Clause "Simplified" License - [https://opensource.org/licenses/BSD-2-Claus
 | ------------------------ | -------- | ---------------- | ---------------------------------------------------------------------------------------------- |
 | `entities`               | `2.2.0`  | Felix Boehm      | [https://github.com/fb55/entities](https://github.com/fb55/entities)                           |
 | `normalize-package-data` | `2.5.0`  | Meryn Stol       | [https://github.com/npm/normalize-package-data](https://github.com/npm/normalize-package-data) |
-| `uglify-js`              | `3.16.2` | Mihai Bazon      | [https://github.com/mishoo/UglifyJS](https://github.com/mishoo/UglifyJS)                       |
+| `uglify-js`              | `3.16.3` | Mihai Bazon      | [https://github.com/mishoo/UglifyJS](https://github.com/mishoo/UglifyJS)                       |
 | `webidl-conversions`     | `3.0.1`  | Domenic Denicola | [https://github.com/jsdom/webidl-conversions](https://github.com/jsdom/webidl-conversions)     |
 
 #### BSD-3-Clause
@@ -146,6 +148,7 @@ BSD 3-Clause "New" or "Revised" License - [https://opensource.org/licenses/BSD-3
 | `flat`                       | `5.0.2`  | Hugh Kennedy                             | [https://github.com/hughsk/flat](https://github.com/hughsk/flat)                                                   |
 | `node-forge`                 | `1.3.1`  | Digital Bazaar, Inc.                     | [https://github.com/digitalbazaar/forge](https://github.com/digitalbazaar/forge)                                   |
 | `protobufjs`                 | `6.11.3` | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
+| `protobufjs`                 | `7.0.0`  | Daniel Wirtz                             | [https://github.com/protobufjs/protobuf.js](https://github.com/protobufjs/protobuf.js)                             |
 | `qs`                         | `6.10.3` |                                          | [https://github.com/ljharb/qs](https://github.com/ljharb/qs)                                                       |
 | `source-map`                 | `0.6.1`  | Nick Fitzgerald                          | [https://github.com/mozilla/source-map](https://github.com/mozilla/source-map)                                     |
 
@@ -212,7 +215,7 @@ ISC License - [https://www.isc.org/downloads/software-support-policy/isc-license
 | `wrappy`               | `1.0.2`  | Isaac Z. Schlueter | [https://github.com/npm/wrappy](https://github.com/npm/wrappy)                                     |
 | `y18n`                 | `5.0.8`  | Ben Coe            | [https://github.com/yargs/y18n](https://github.com/yargs/y18n)                                     |
 | `yallist`              | `4.0.0`  | Isaac Z. Schlueter | [https://github.com/isaacs/yallist](https://github.com/isaacs/yallist)                             |
-| `yargs-parser`         | `20.2.4` | Ben Coe            | [https://github.com/yargs/yargs-parser](https://github.com/yargs/yargs-parser)                     |
+| `yargs-parser`         | `20.2.9` | Ben Coe            | [https://github.com/yargs/yargs-parser](https://github.com/yargs/yargs-parser)                     |
 | `yargs-parser`         | `21.0.1` | Ben Coe            | [https://github.com/yargs/yargs-parser](https://github.com/yargs/yargs-parser)                     |
 
 #### MIT
@@ -221,7 +224,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 
 | Name                                    | Version    | Publisher                  | Repository                                                                                                                                     |
 | --------------------------------------- | ---------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@babel/code-frame`                     | `7.12.11`  | Sebastian McKenzie         | [https://github.com/babel/babel](https://github.com/babel/babel)                                                                               |
+| `@babel/code-frame`                     | `7.18.6`   | The Babel Team             | [https://github.com/babel/babel](https://github.com/babel/babel)                                                                               |
 | `@babel/helper-validator-identifier`    | `7.18.6`   | The Babel Team             | [https://github.com/babel/babel](https://github.com/babel/babel)                                                                               |
 | `@babel/highlight`                      | `7.18.6`   | The Babel Team             | [https://github.com/babel/babel](https://github.com/babel/babel)                                                                               |
 | `@nodelib/fs.scandir`                   | `2.1.5`    |                            | [https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir](https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir) |
@@ -231,8 +234,8 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `@octokit/core`                         | `3.6.0`    |                            | [https://github.com/octokit/core.js](https://github.com/octokit/core.js)                                                                       |
 | `@octokit/endpoint`                     | `6.0.12`   |                            | [https://github.com/octokit/endpoint.js](https://github.com/octokit/endpoint.js)                                                               |
 | `@octokit/graphql`                      | `4.8.0`    |                            | [https://github.com/octokit/graphql.js](https://github.com/octokit/graphql.js)                                                                 |
-| `@octokit/openapi-types`                | `12.10.0`  | Gregor Martynus            | [https://github.com/octokit/openapi-types.ts](https://github.com/octokit/openapi-types.ts)                                                     |
-| `@octokit/plugin-paginate-rest`         | `2.21.2`   |                            | [https://github.com/octokit/plugin-paginate-rest.js](https://github.com/octokit/plugin-paginate-rest.js)                                       |
+| `@octokit/openapi-types`                | `12.10.1`  | Gregor Martynus            | [https://github.com/octokit/openapi-types.ts](https://github.com/octokit/openapi-types.ts)                                                     |
+| `@octokit/plugin-paginate-rest`         | `2.21.3`   |                            | [https://github.com/octokit/plugin-paginate-rest.js](https://github.com/octokit/plugin-paginate-rest.js)                                       |
 | `@octokit/plugin-request-log`           | `1.0.4`    |                            | [https://github.com/octokit/plugin-request-log.js](https://github.com/octokit/plugin-request-log.js)                                           |
 | `@octokit/plugin-rest-endpoint-methods` | `5.16.2`   |                            | [https://github.com/octokit/plugin-rest-endpoint-methods.js](https://github.com/octokit/plugin-rest-endpoint-methods.js)                       |
 | `@octokit/request-error`                | `2.1.0`    |                            | [https://github.com/octokit/request-error.js](https://github.com/octokit/request-error.js)                                                     |
@@ -261,10 +264,10 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `@types/lodash.uniq`                    | `4.5.7`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/lodash`                         | `4.14.182` |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/long`                           | `4.0.2`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
-| `@types/luxon`                          | `2.3.2`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
+| `@types/luxon`                          | `2.4.0`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/mime`                           | `1.3.2`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/node-fetch`                     | `2.6.2`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
-| `@types/node`                           | `17.0.5`   |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
+| `@types/node`                           | `18.6.1`   |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/normalize-package-data`         | `2.4.1`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/pluralize`                      | `0.0.29`   |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
 | `@types/qs`                             | `6.9.7`    |                            | [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)                                       |
@@ -336,7 +339,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `extend`                                | `3.0.2`    | Stefan Thomas              | [https://github.com/justmoon/node-extend](https://github.com/justmoon/node-extend)                                                             |
 | `fast-glob`                             | `3.2.11`   | Denis Malinochkin          | [https://github.com/mrmlnc/fast-glob](https://github.com/mrmlnc/fast-glob)                                                                     |
 | `fast-xml-parser`                       | `3.19.0`   | Amit Gupta                 | [https://github.com/NaturalIntelligence/fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser)                               |
-| `fastest-levenshtein`                   | `1.0.12`   | Kasper U. Weihe            | [https://github.com/ka-weihe/fastest-levenshtein](https://github.com/ka-weihe/fastest-levenshtein)                                             |
+| `fastest-levenshtein`                   | `1.0.14`   | Kasper U. Weihe            | [https://github.com/ka-weihe/fastest-levenshtein](https://github.com/ka-weihe/fastest-levenshtein)                                             |
 | `fill-range`                            | `7.0.1`    | Jon Schlinkert             | [https://github.com/jonschlinkert/fill-range](https://github.com/jonschlinkert/fill-range)                                                     |
 | `filter-obj`                            | `1.1.0`    | Sindre Sorhus              | [https://github.com/sindresorhus/filter-obj](https://github.com/sindresorhus/filter-obj)                                                       |
 | `finalhandler`                          | `1.2.0`    | Douglas Christopher Wilson | [https://github.com/pillarjs/finalhandler](https://github.com/pillarjs/finalhandler)                                                           |
@@ -432,7 +435,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 | `p-try`                                 | `2.2.0`    | Sindre Sorhus              | [https://github.com/sindresorhus/p-try](https://github.com/sindresorhus/p-try)                                                                 |
 | `parse-json`                            | `5.2.0`    | Sindre Sorhus              | [https://github.com/sindresorhus/parse-json](https://github.com/sindresorhus/parse-json)                                                       |
 | `parse-path`                            | `4.0.4`    | Ionică Bizău               | [https://github.com/IonicaBizau/parse-path](https://github.com/IonicaBizau/parse-path)                                                         |
-| `parse-url`                             | `6.0.2`    | Ionică Bizău               | [https://github.com/IonicaBizau/parse-url](https://github.com/IonicaBizau/parse-url)                                                           |
+| `parse-url`                             | `6.0.3`    | Ionică Bizău               | [https://github.com/IonicaBizau/parse-url](https://github.com/IonicaBizau/parse-url)                                                           |
 | `parseurl`                              | `1.3.3`    |                            | [https://github.com/pillarjs/parseurl](https://github.com/pillarjs/parseurl)                                                                   |
 | `path-exists`                           | `4.0.0`    | Sindre Sorhus              | [https://github.com/sindresorhus/path-exists](https://github.com/sindresorhus/path-exists)                                                     |
 | `path-is-absolute`                      | `1.0.1`    | Sindre Sorhus              | [https://github.com/sindresorhus/path-is-absolute](https://github.com/sindresorhus/path-is-absolute)                                           |
