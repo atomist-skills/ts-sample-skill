@@ -6,14 +6,15 @@ WORKDIR /usr/src
 COPY . ./
 
 RUN npm ci --no-optional --include=dev \
- && npm run skill \
+ && npm run compile test \
  && rm -rf node_modules .git
 
 # Set up runtime container
 FROM atomist/skill:alpine_3.16-node_16@sha256:45b4a0b5c48576a7269f8b2861ebc05cec1881cfb48abbb21aa8215ccf6bd3c6
 
 LABEL com.docker.skill.api.version="container/v2"
-COPY --from=build /usr/src/.atomist/skill.yaml /
+COPY skill.yaml /
+COPY datalog /datalog
 
 WORKDIR "/skill"
 
