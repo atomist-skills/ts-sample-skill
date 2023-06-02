@@ -58,7 +58,7 @@ $ npm ci
 
 Use the `build` package script to compile, test, lint, and build the
 documentation.
- 
+
 ```
 $ npm run build
 ```
