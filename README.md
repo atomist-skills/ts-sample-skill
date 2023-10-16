@@ -74,7 +74,7 @@ maturity drop-down in its Atomist Community Slack channel.
 [semver]: https://semver.org/ "Semantic Version"
 
 ---
-
+ 
 Created by [Atomist][atomist]. Need Help? [Join our Slack workspace][slack].
 
 [atomist]: https://atomist.com/ "Atomist"
